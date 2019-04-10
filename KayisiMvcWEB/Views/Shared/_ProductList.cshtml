@@ -1,0 +1,31 @@
+﻿@using KayisiMvcWEB.Models;
+@model IEnumerable<ProductModel>
+
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4 mt-3">
+            <div class="card">
+                <img src="/Upload/@urun.Image" class="card-img-top img-description" alt="@urun.Name">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id">
+                            @urun.Name
+                        </a>
+                    </h5>
+                    <p class="card-text pt-2 description">@urun.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted product-price">@urun.Price ₺ </small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-xs float-right">
+                        <i class="fas fa-chevron-circle-right" style="font-size: 12px;"></i>
+                        Ürünü incele
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
